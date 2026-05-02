@@ -71,10 +71,10 @@ class PriceEngine:
         # This function should be the only place that controls price movement.
         self.trend()
 
-        noise = random.gauss(0, self.volatility) #First argument: average, Second: amplitude.
+        noise = random.gauss(0, self.volatility) # First argument: average, Second: amplitude.
         k = self.drift + self.trend_bias + noise
         new_price = self.current_price * (1 + k)
-        self.current_price = max(0.01, new_price) #Prevent the price to fall below 0.
+        self.current_price = max(0.01, new_price) # Prevent the price to fall below 0.
 
         if self.trend_t_remaining > 0:
             self.trend_t_remaining -= 1
