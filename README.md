@@ -28,4 +28,4 @@ python realtime_stock_simulator_skeleton.py
 
 ## Replication Document
 
-See the replication document for setup details, environment notes, and steps to reproduce the project behavior.
+See [REPLICATION_AND_AI_USAGE.md](REPLICATION_AND_AI_USAGE.md) for setup details, environment notes, and steps to reproduce the project behavior.

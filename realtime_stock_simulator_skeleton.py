@@ -189,7 +189,7 @@ class RealtimeStockSimulator:
         update_interval: float = UPDATE_INTERVAL,
         visible_window: float = VISIBLE_WINDOW_SECONDS,
     ):
-        # Store the main objects and the data needed for the rolling chart.
+        # Store the main objects and the game_raw_data needed for the rolling chart.
         self.engine = PriceEngine(current_price=initial_price)
         self.portfolio = Portfolio(cash=initial_cash)
         self.difficulty: Optional[Difficulty] = None
@@ -444,7 +444,7 @@ class RealtimeStockSimulator:
 
 
     def getVisibleData(self) -> tuple[list[float], list[float]]:
-        # Return only the recent data points inside the visible time window. (Last 10 seconds.)
+        # Return only the recent game_raw_data points inside the visible time window. (Last 10 seconds.)
         if self.times == [] or self.prices == []:
             return ([], [])
 
@@ -474,9 +474,9 @@ class RealtimeStockSimulator:
 
     def renderChart(self) -> None:
         # Draw the realtime price chart using Matplotlib.
-        # Take only data from the last 10 seconds. (Visible window = 10.)
+        # Take only game_raw_data from the last 10 seconds. (Visible window = 10.)
         # This is only used in Colab/Jupyter.
-        visible_times, visible_prices = self.getVisibleData() # Get data for x & y axis.
+        visible_times, visible_prices = self.getVisibleData() # Get game_raw_data for x & y axis.
         y_floor, y_ceil = self.compute_Y_Limits(visible_prices) # The upper and lower bound of the graph.
 
         # Use Matplotlib to draw the graph.
@@ -1008,7 +1008,7 @@ EASY_DIFFICULTY = Difficulty(
     name='easy',
     initial_cash=12000,
     fee_rate=0.0,
-    drift=0.001,
+    drift=0.002,
     volatility=0.01,
     min_trend_interval=5,
     max_trend_interval=8,
