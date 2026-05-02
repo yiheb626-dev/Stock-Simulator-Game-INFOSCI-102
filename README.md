@@ -1,26 +1,18 @@
 # Realtime Stock Simulator
 
-A simple realtime stock trading simulator for Google Colab, Jupyter Notebook, and normal Python GUI.
+By Yi He.
 
-## Features
+This project is a realtime stock trading simulator game built for INFOSCI 102. The player chooses a difficulty level, watches a simulated stock price change over time, buys and sells shares, and tries to reach the target asset value without falling below the loss limit.
 
-- Difficulty selection: Easy, Normal, and Hard.
-- Realtime stock price simulation.
-- Buy and sell shares at the current market price.
-- Portfolio display with cash, shares, average cost, and total assets.
-- Supports Google Colab, Jupyter Notebook, and normal Python desktop execution.
+## What I Built
 
-## Requirements
+I built a Python stock simulator that can run in Google Colab, Jupyter Notebook, or as a normal Python GUI. It includes difficulty settings, automatic price updates, trading controls, portfolio tracking, restart/main-menu controls, and win/loss conditions.
 
-Install dependencies with:
+## Inputs And Outputs
 
-```bash
-pip install -r requirements.txt
-```
-
-`tkinter` is used for normal Python GUI mode and is usually included with standard Python installations.
-
-## Run In Google Colab Or Jupyter
+- Inputs: difficulty level, share quantity, Buy/Sell/Next Tick/Start Auto/Pause Auto/Restart/Main Menu button actions.
+- Outputs: realtime stock price chart, current cash, shares, average cost, total assets, target/loss values, and status messages.
+- Example notebook usage:
 
 ```python
 from realtime_stock_simulator_skeleton import create_simulator
@@ -28,14 +20,12 @@ from realtime_stock_simulator_skeleton import create_simulator
 game = create_simulator()
 ```
 
-## Run As Normal Python
+- Example normal Python usage:
 
 ```bash
 python realtime_stock_simulator_skeleton.py
 ```
 
-## Files
+## Replication Document
 
-- `realtime_stock_simulator_skeleton.py`: Main simulator source code.
-- `requirements.txt`: Python dependencies.
-- `.gitignore`: Files ignored by Git.
+See the replication document for setup details, environment notes, and steps to reproduce the project behavior.
